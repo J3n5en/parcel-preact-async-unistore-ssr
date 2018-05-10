@@ -13,7 +13,8 @@
     "build:client":
       "parcel build index.html  --public-url ./public/ -d ./dist/public",
     "build:server": "parcel build server.js -t node",
-    "build": "npm run build:client && npm run build:server"
+    "build":
+      "cross-env NODE_ENV=production npm run build:client && npm run build:server"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
     "babel-plugin-dynamic-import-node-sync": "^1.0.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-preact": "^1.1.0",
+    "cross-env": "^5.1.5",
     "parcel-bundler": "^1.8.1"
   },
   "alias": {
