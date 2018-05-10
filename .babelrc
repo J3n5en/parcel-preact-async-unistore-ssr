@@ -1,0 +1,4 @@
+{
+  "presets": ["env", "preact"],
+  "plugins": ["dynamic-import-node-sync"]
+}

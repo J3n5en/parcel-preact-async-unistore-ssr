@@ -1,0 +1,40 @@
+{
+  "name": "parcel-preact-async-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:client":
+      "parcel watch index.html  --public-url ./public/ -d ./dist/public",
+    "watch:ssr": "parcel watch server.js -t node",
+    "ssr-server": "nodemon ./dist/server.js -w ./dist",
+    "dev": "npm run watch:client & npm run watch:ssr & npm run ssr-server",
+    "build:client":
+      "parcel build index.html  --public-url ./public/ -d ./dist/public",
+    "build:server": "parcel build server.js -t node",
+    "build": "npm run build:client && npm run build:server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "preact": "^8.2.9",
+    "preact-async-route": "^2.1.1",
+    "preact-compat": "^3.18.0",
+    "preact-render-to-string": "^3.7.0",
+    "preact-router": "^2.6.0",
+    "unistore": "^3.0.5"
+  },
+  "devDependencies": {
+    "babel-plugin-dynamic-import-node-sync": "^1.0.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-preact": "^1.1.0",
+    "parcel-bundler": "^1.8.1"
+  },
+  "alias": {
+    "react": "preact-compat",
+    "react-dom": "preact-compat"
+  }
+}
